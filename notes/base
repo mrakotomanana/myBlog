@@ -1,0 +1,163 @@
+
+const compteur = <HTMLButtonElement>document.querySelector('#compteur') 
+
+
+const compteurs = document.querySelector('#compteur') as HTMLButtonElement
+
+/*
+let i = 0
+
+const increment = (e) => {
+  i++
+  compteur.querySelector('span').innerText = i.toString()
+}
+
+compteur.addEventListener('click', increment)
+*/
+const abc: string = "sqf"
+const aNull: null = null
+const arr: string[] = ['aza', 'test']
+const arr2: any[] = ['aza', 'test', 12]
+const user: { first: string, last: string } = { first: "jo", last: "test" }
+const user2: { first: string, last?: string } = { first: "jo" }
+const user3: { first: string, [key:string]: string} = { first: "jo", last: "test" }
+const date: Date = new Date()
+const cb: Function = (e: MouseEvent): void=> {
+  
+}
+
+const cb2: (e: MouseEvent) => void = (e: MouseEvent): number=> {
+  return 1
+}
+
+const detail = { first: "jo", last: "test" }
+
+const test = "first"
+
+console.log(detail[test])
+
+function printId(id: number | string): void {
+  console.log(id.toString())
+}
+
+
+const compteur = document.querySelector('#compteur')
+type User = { firstname: string, lastname: string}
+let i = 0
+
+const user: User = {firstname: "Joe", lastname: "Mic"}
+const increment = () => {
+  i++
+  compteur.querySelector('span').innerText = i.toString()
+}
+
+compteur.addEventListener('click', increment)
+
+function printId(id: string | number, b: string | number | boolean) {
+  if (typeof id === "number") {
+    console.log((id * 3).toString())
+  } else {
+    console.log(id.toUpperCase())
+  }
+}
+
+function example(a: string | string[]) {
+  if (Array.isArray(a)) {
+    console.log(a.length)
+  }
+}
+
+function otherExample(a: string | Date) {
+  if (a instanceof Date) {
+    console.log(a.getDay())
+  }
+}
+
+function moreExample(e: MouseEvent | HTMLInputElement) {
+  if ("value" in e) {
+    console.log(e.value)
+  }
+}
+
+function isDate(a: any): a is Date{
+  return a instanceof Date
+}
+
+type Id = string | number
+type Identity<ArgType> = (arg: ArgType) => ArgType
+
+function parseId(id: Id): Id {
+  return id
+}
+
+function test<ArgType>(arg: ArgType): ArgType{
+  return arg
+}
+
+function example<Type>(arg: Type[]): Type{
+  return arg[0]
+}
+
+const aa = example([13, "qsd", true])
+
+
+function add<T>(arg: readonly T[]): readonly T[]{
+  return [...arg].reverse()
+}
+
+class  A {
+  private a = 3
+  constructor(private ab: number) {
+    
+  }
+  log() {
+    console.log(this.a)
+  }
+}
+
+class B<T>{
+  constructor(private items: T[]) {
+    
+  }
+  
+}
+  
+const aInstance = new A(12)
+aInstance.log();
+
+interface Backpack<Type> {
+  add: (obj: Type) => void;
+  get: () => Type;
+}
+
+declare const backpack: Backpack<number>;
+
+const object = backpack.get();
+
+function test(): object{
+  return backpack
+}
+
+function consoleSize<Type extends { length: number }>(arg: Type): Type{
+  console.log(arg.length);
+  return arg  
+}
+
+type User = { first: string, last: number }
+
+type P = keyof User
+type Username = User['first']
+
+class Collection<T>{
+  constructor(private items: T[]) {
+    
+  }
+
+  first(): T | null{
+    return this.items[0] || null
+  }
+}
+
+const a = new Collection<number>([1, 3, 5])
+const b = a.first()
+console.log(b)

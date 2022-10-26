@@ -1,0 +1,23 @@
+{
+  "name": "myblog",
+  "version": "1.0.0",
+  "description": "blog tuto",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrakotomanana/myBlog.git"
+  },
+  "author": "didlay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrakotomanana/myBlog/issues"
+  },
+  "homepage": "https://github.com/mrakotomanana/myBlog#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^4.4.3"
+  }
+}
